@@ -2,11 +2,25 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-                "virtualMachineName": {
+        "virtualMachineName": {
             "type": "string",
             "defaultValue": null,
             "metadata": {
                 "description": "The name of the virtual machine."
+            }
+        },
+	    "AdminUsername": {
+            "type": "string",
+            "defaultValue": null,
+            "metadata": {
+                "description": "The administrator username for the virtual machine."
+            }
+        },
+        "AdminPassword": {
+            "type": "securestring",
+            "defaultValue": null,
+            "metadata": {
+                "description": "The administrator password for the virtual machine."
             }
         },
        "virtualMachineSize": {
@@ -87,20 +101,6 @@
             "defaultValue": null,
             "metadata": {
                 "description": "The name of the network interface for the virtual machine."
-            }
-        },
-        "AdminUsername": {
-            "type": "string",
-            "defaultValue": null,
-            "metadata": {
-                "description": "The administrator username for the virtual machine."
-            }
-        },
-        "AdminPassword": {
-            "type": "securestring",
-            "defaultValue": null,
-            "metadata": {
-                "description": "The administrator password for the virtual machine."
             }
         },
         "environmentTag": {
