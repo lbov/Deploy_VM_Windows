@@ -143,9 +143,9 @@
                     "osDisk": {
                         "name": "OperatingSystem",
                         "createOption": "FromImage",
-                        "vhd": {
-                            "uri": "[concat(parameters('virtualMachineName'),'_OperatingSystem.vhd'))]"
-                        },
+			"managedDisk": {
+              		"id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachineName'), '_OperatingSystem.vhd'))]"
+            		}
                         "caching": "ReadWrite"
                     }
                 },
